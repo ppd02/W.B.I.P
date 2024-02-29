@@ -17,19 +17,19 @@
       - API fetching
       In terminal:<br>
       
-      ```python
+  ```python
   pip install requests
-      ```
+  ```
     
   <br>Import:<br>
       
-      ```python
+  ```python
   import requests
-      ```
+  ```
       
   <br>To fetch API (assuming that you have the api link):<br>
   
-      ```python
+  ```python
   data = requests.get("the api link which you have")
   data.json()
-      ```
+  ```
