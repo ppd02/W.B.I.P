@@ -16,15 +16,15 @@
       Libraries/Concepts covered:
       - API fetching
       In terminal:<br>
-      ```python
+      ```shell
       pip install requests
       ```
       <br>Import:<br>
-      ```python
+      ```shell
       import requests
       ```
       <br>To fetch API (assuming that you have the api link):<br>
-      ```python
+      ```shell
       data = requests.get("the api link which you have")
       data.json()
       ```
