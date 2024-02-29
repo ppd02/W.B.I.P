@@ -8,6 +8,9 @@ import requests
 root = tk.Tk()
 root.geometry("750x600")
 root.resizable(width=False, height=False)
+root.title("W.B.I.P")
+head = tk.Label(root, text="W.B.I.P", font=15, background="orange")
+head.pack(pady=10)
 bucks = 0
 # Image Processing using pillow
 but1_image = "/home/uzayr/Desktop/python/final/gallery.png"
@@ -296,12 +299,12 @@ def func_b4():
         for i in range(1, -1, -1):
             if pokemon[i]['base_experience'] > pokemon[i-1]['base_experience']:
                 # print(f"The winner is {pokemon[i]['name']}")
-                win_label = tk.Label(detail_frame, text="The winner is "+pokemon[i]['name'])
+                win_label = tk.Label(detail_frame, text="The winner is "+pokemon[i]['name'], background="green")
                 win_label.pack()
                 break
             else:
                 # print(f"The winner is {pokemon[i-1]['name']}")
-                winner_label = tk.Label(detail_frame, text="The winner is "+pokemon[i-1]['name'])
+                winner_label = tk.Label(detail_frame, text="The winner is "+pokemon[i-1]['name'], background="green")
                 winner_label.pack()
                 break
 
@@ -334,7 +337,7 @@ def func_b4():
     label_2.pack()
     label_2_entry = tk.Entry(pok,width=10)
     label_2_entry.pack()
-    fight = tk.Button(pok,text="Start Match", command=submit)
+    fight = tk.Button(pok,text="Battle!", command=submit)
     fight.pack()
     back_button = tk.Button(pok,text="<--", command=pok.destroy, activebackground="red", activeforeground="white")
     back_button.place(x=0,y=0)
