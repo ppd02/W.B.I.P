@@ -13,10 +13,10 @@ head = tk.Label(root, text="W.B.I.P", font=15, background="orange")
 head.pack(pady=10)
 bucks = 0
 # Image Processing using pillow
-but1_image = "/home/uzayr/Desktop/python/final/gallery.png"
-but2_image = "/home/uzayr/Desktop/python/final/ruppee.png"
-but3_image = "/home/uzayr/Desktop/python/final/wordle.png"
-but4_image = "/home/uzayr/Desktop/python/final/poke_ball.png"
+but1_image = "images/gallery.png"
+but2_image = "images/ruppee.png"
+but3_image = "images/wordle.png"
+but4_image = "images/poke_ball.png"
 
 image1 = Image.open(but1_image)
 image2 = Image.open(but2_image)
@@ -108,7 +108,7 @@ def func_b2():
                     bucks -= int(amt)
                     w_success = tk.Label(w_frame, text="Withdrawl Succesful")
                     w_success.pack()
-                with open("/home/uzayr/Desktop/python/final/logs.txt", "a") as logs:
+                with open("logs.txt", "a") as logs:
                     logs.write(f">> Withdrawn: {str(amt)}\n")
                     logs.flush()
                 return int(amt)        
@@ -130,7 +130,7 @@ def func_b2():
                 global bucks
                 amt = int(amount.get())
                 bucks += amt
-                with open("/home/uzayr/Desktop/python/final/logs.txt", "a") as logs:
+                with open("logs.txt", "a") as logs:
                     logs.write(f">> Deposited: {str(amt)}\n")
                     logs.flush()
                 d_success = tk.Label(d_frame, text="Deposit Succesful")
@@ -148,11 +148,11 @@ def func_b2():
             b_frame.place(x=0,y=0, width=500, height=500)
 
             def submit():
-                with open("/home/uzayr/Desktop/python/final/logs.txt", "a") as logs:
+                with open("logs.txt", "a") as logs:
                     logs.write(f">> Checked Balance ({bucks})\n")
                     logs.flush()
                 text = ""
-                with open("/home/uzayr/Desktop/python/final/logs.txt", "r") as logs:
+                with open("logs.txt", "r") as logs:
                     for word in logs:
                         text += word
 
