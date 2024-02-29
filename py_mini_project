@@ -59,6 +59,9 @@ def func_b1():
     new_frame = tk.Frame(root)
     new_frame.place(x=0, y=0, height=750, width=750)
 
+    head = tk.Label(new_frame, text="Image Compressor", font=15, background="orange")
+    head.pack(pady=20)
+
     labelling = tk.Label(new_frame, text="Enter Height:")
     labelling.pack()
 
@@ -71,16 +74,18 @@ def func_b1():
     width_entry = tk.Entry(new_frame, width=5, font=6)
     width_entry.pack()
 
-    open_button = tk.Button(new_frame, text="Open File", command=lambda: open_file_dialog(width_entry, height_entry))
+    open_button = tk.Button(new_frame, text="Select image",activebackground="green", activeforeground="white", command=lambda: open_file_dialog(width_entry, height_entry))
     open_button.pack(padx=20, pady=20)
-    back_button = tk.Button(new_frame,text="<--", command=new_frame.destroy)
+    back_button = tk.Button(new_frame,text="<--", command=new_frame.destroy, activebackground="red", activeforeground="white")
     back_button.place(x=0,y=0)
 
 def func_b2():
     bank = tk.Tk()
     bank.geometry("500x500")
-    end = tk.Button(bank, text="<--", command=bank.destroy)
+    end = tk.Button(bank, text="<--", command=bank.destroy, activebackground="red", activeforeground="white")
     end.place(x=0, y=0)
+    head = tk.Label(bank, text="Bank", font=15, background="orange")
+    head.pack(pady=10)
 
     class Bank:
         def withdraw(self):
@@ -107,7 +112,7 @@ def func_b2():
             
             button_submit = tk.Button(w_frame, text="Withdraw", command=submit)
             button_submit.pack()
-            back_button = tk.Button(w_frame,text="<--", command=w_frame.destroy)
+            back_button = tk.Button(w_frame,text="<--", command=w_frame.destroy, activebackground="red", activeforeground="white")
             back_button.place(x=0,y=0)
         
         def deposit(self):
@@ -131,7 +136,7 @@ def func_b2():
 
             button_submit = tk.Button(d_frame, text="Deposit", command=submit)
             button_submit.pack()
-            back_button = tk.Button(d_frame,text="<--", command=d_frame.destroy)
+            back_button = tk.Button(d_frame,text="<--", command=d_frame.destroy, activebackground="red", activeforeground="white")
             back_button.place(x=0,y=0)
 
         def balance(self):
@@ -155,7 +160,7 @@ def func_b2():
             b_label.pack()
             button_submit = tk.Button(b_frame, text="View logs", command=submit)
             button_submit.pack()
-            back_button = tk.Button(b_frame,text="<--", command=b_frame.destroy)
+            back_button = tk.Button(b_frame,text="<--", command=b_frame.destroy, activebackground="red", activeforeground="white")
             back_button.place(x=0,y=0)
             
         def options(self):
@@ -174,7 +179,7 @@ def func_b2():
             choice.pack()
             option = choice.get()
             # return option
-            button_submit = tk.Button(bank, text="SUBMIT", command=submit)
+            button_submit = tk.Button(bank, text="Sumbit", command=submit, activebackground="green", activeforeground="white")
             button_submit.pack()
 
     user1 = Bank()
@@ -232,7 +237,9 @@ def func_b3():
     #splitting the word into individual letters using list() function
     letters = list(hiddenWord)
     #calling the function Wordle
-    end = tk.Button(word, text="<--",command=word.destroy)
+    head = tk.Label(word, text="Wordle", font=15)
+    head.pack(pady=10)
+    end = tk.Button(word, text="<--",command=word.destroy, activebackground="red", activeforeground="white")
     end.place(x=0, y=0)
     Wordle(letters, hiddenWord)
     word.mainloop()
@@ -241,6 +248,8 @@ def func_b4():
     pok = tk.Tk()
     pok.title("Pokemon Battle")
     pok.geometry("500x500")
+    head = tk.Label(pok, text="Pokemon Battle!", font=15, background="orange")
+    head.pack(pady=10)
 
     def fetch_poke_details(player1, player2):    
         poke1 = requests.get(f"https://pokeapi.co/api/v2/pokemon/{player1}")
@@ -310,11 +319,11 @@ def func_b4():
         player2 = label_2_entry.get()
         poke_details = fetch_poke_details(player1, player2)
         # print(f"Fetched {pokemon}'s details successfully.")
-        view_label = tk.Label(frame, text="Would you like to see the pokemon's details? [Y / N]")
+        view_label = tk.Label(frame, text="Are you ready for the battle? [Y / N]")
         view_label.pack()
         view_enter = tk.Entry(frame, width=10)
         view_enter.pack()
-        button_yes = tk.Button(frame, text="Submit", command=yes)
+        button_yes = tk.Button(frame, text="Submit", command=yes, activebackground="green", activeforeground="white")
         button_yes.pack()
 
     label_1 = tk.Label(pok,text="Player 1: Enter pokemon")
@@ -327,25 +336,25 @@ def func_b4():
     label_2_entry.pack()
     fight = tk.Button(pok,text="Start Match", command=submit)
     fight.pack()
-    back_button = tk.Button(pok,text="<--", command=pok.destroy)
+    back_button = tk.Button(pok,text="<--", command=pok.destroy, activebackground="red", activeforeground="white")
     back_button.place(x=0,y=0)
 
     pok.mainloop()
 
 # Button Creation
-button1 = tk.Button(root, text="Image Compressor", activebackground="green",width=110, bg='light green', image=img1_tk, compound=TOP, command=func_b1)
+button1 = tk.Button(root, text="Image Compressor", activebackground="green",activeforeground="white",width=110, bg='light green', image=img1_tk, compound=TOP, command=func_b1)
 button1.place(relx=0.2, rely=0.2)
 
-button2 = tk.Button(root, text="Banking", activebackground="green",width=110, bg='light green', image=img2_tk, compound=TOP, command=func_b2)
+button2 = tk.Button(root, text="Banking", activebackground="green",activeforeground="white",width=110, bg='light green', image=img2_tk, compound=TOP, command=func_b2)
 button2.place(relx=0.7, rely=0.2)
 
-button3 = tk.Button(root, text="Worlde", activebackground="green",width=110, bg='light green', image=img3_tk, compound=TOP, command=func_b3)
+button3 = tk.Button(root, text="Worlde", activebackground="green",activeforeground="white",width=110, bg='light green', image=img3_tk, compound=TOP, command=func_b3)
 button3.place(relx=0.2, rely=0.4)
 
-button4 = tk.Button(root, text="Pokemon Game", activebackground="green",width=110, bg='light green', image=img4_tk, compound=TOP, command=func_b4)
+button4 = tk.Button(root, text="Pokemon Game", activebackground="green",activeforeground="white", width=110, bg='light green', image=img4_tk, compound=TOP, command=func_b4)
 button4.place(relx=0.7, rely=0.4)
 
-button_Exit = tk.Button(root, width=20, height=2, text="EXIT", bg='light pink', activebackground='red', command=root.destroy)
+button_Exit = tk.Button(root, width=20, height=2, text="EXIT", bg='light pink',activeforeground="white", activebackground='red', command=root.destroy)
 button_Exit.place(relx=0.4, rely=0.65)
 
 root.mainloop()
