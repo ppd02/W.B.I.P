@@ -9,10 +9,25 @@ root = tk.Tk()
 root.geometry("750x750")
 bucks = 0
 # Image Processing using pillow
-img_path = "E:/Wallpapers/megumi.jpg"
-imgs = Image.open(img_path)
-imgs = imgs.resize((80, 70))
-img_tk = ImageTk.PhotoImage(imgs)
+but1_image = "E:/Downloads/gallery.png"
+but2_image = "E:/Downloads/ruppee.png"
+but3_image = "E:/Downloads/wordle.png"
+but4_image = "E:/Downloads/poke_ball.png"
+
+image1 = Image.open(but1_image)
+image2 = Image.open(but2_image)
+image3 = Image.open(but3_image)
+image4 = Image.open(but4_image)
+
+image1 = image1.resize((70, 70))
+image2 = image2.resize((70, 70))
+image3 = image3.resize((70, 70))
+image4 = image4.resize((70, 70))
+
+img1_tk = ImageTk.PhotoImage(image1)
+img2_tk = ImageTk.PhotoImage(image2)
+img3_tk = ImageTk.PhotoImage(image3)
+img4_tk = ImageTk.PhotoImage(image4)
 
 
 def func_b1():
@@ -29,7 +44,9 @@ def func_b1():
                 def img_tk():
                     imgs.show()
             
-            master1 = tk.Tk()
+            master1 = tk.Frame(new_frame)
+            master1.pack()
+            # master1 = tk.Frame(root)
             label = tk.Label(master1,text="Image Loaded Successfully",font=5)
             label.pack()
             btu = tk.Button(master1,text="DOWNLOAD IMAGE",command=img_tk)
@@ -55,6 +72,8 @@ def func_b1():
 
     open_button = tk.Button(new_frame, text="Open File", command=lambda: open_file_dialog(width_entry, height_entry))
     open_button.pack(padx=20, pady=20)
+    back_button = tk.Button(new_frame,text="<--", command=new_frame.destroy)
+    back_button.place(x=0,y=0)
 
 def func_b2():
     bank = tk.Tk()
@@ -304,20 +323,22 @@ def func_b4():
     label_2_entry.pack()
     fight = tk.Button(pok,text="Start Match", command=submit)
     fight.pack()
+    back_button = tk.Button(pok,text="<--", command=pok.destroy)
+    back_button.place(x=0,y=0)
 
     pok.mainloop()
 
 # Button Creation
-button1 = tk.Button(root, text="Image Compressor", activebackground="green", bg='light green', image=img_tk, compound=TOP, command=func_b1)
+button1 = tk.Button(root, text="Image Compressor", activebackground="green", bg='light green', image=img1_tk, compound=TOP, command=func_b1)
 button1.place(relx=0.2, rely=0.2)
 
-button2 = tk.Button(root, text="Banking", activebackground="green", bg='light green', image=img_tk, compound=TOP, command=func_b2)
+button2 = tk.Button(root, text="Banking", activebackground="green", bg='light green', image=img2_tk, compound=TOP, command=func_b2)
 button2.place(relx=0.7, rely=0.2)
 
-button3 = tk.Button(root, text="Worlde", activebackground="green", bg='light green', image=img_tk, compound=TOP, command=func_b3)
+button3 = tk.Button(root, text="Worlde", activebackground="green", bg='light green', image=img3_tk, compound=TOP, command=func_b3)
 button3.place(relx=0.2, rely=0.7)
 
-button4 = tk.Button(root, text="Pokemon Game", activebackground="green", bg='light green', image=img_tk, compound=TOP, command=func_b4)
+button4 = tk.Button(root, text="Pokemon Game", activebackground="green", bg='light green', image=img4_tk, compound=TOP, command=func_b4)
 button4.place(relx=0.7, rely=0.7)
 
 button_Exit = tk.Button(root, width=15, height=2, text="END PROGRAM", bg='light pink', activebackground='light blue', command=root.destroy)
