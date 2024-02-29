@@ -13,8 +13,8 @@
       
   -> P - Pokemon Battle<br>
       This is a game, an attempt to recreate the pokemon cards game, where 2 players battle against each other with a pokemon, and the winner is decided according to a few stats of the pokemon.<br>
-      Libraries/Concepts covered:
-      - API fetching
+      Libraries/Concepts covered:<br>
+      - API fetching<br>
       In terminal:<br>
       
   ```python
