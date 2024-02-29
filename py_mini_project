@@ -193,7 +193,7 @@ def func_b3():
     word = tk.Tk()
     word.title("Wordle")
     word.geometry("1000x600")
-    word.resizable(width=False, height=False)
+    word.resizable(width=False, height=True)
     # function which checks if the hidden word is equal to the guessed word
     def Wordle(letters, hiddenWord):
         #giving the user 6 chances
