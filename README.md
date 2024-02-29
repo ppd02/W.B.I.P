@@ -15,15 +15,15 @@
       This is a game, an attempt to recreate the pokemon cards game, where 2 players battle against each other with a pokemon, and the winner is decided according to a few stats of the pokemon.
       Libraries/Concepts covered:
       - API fetching
-      In terminal:
+      In terminal:<br>
       ```python
       pip install requests
       ```
-      Import:
+      <br>Import:<br>
       ```python
       import requests
       ```
-      To fetch API (assuming that you have the api link):
+      <br>To fetch API (assuming that you have the api link):<br>
       ```python
       data = requests.get("the api link which you have")
       data.json()
